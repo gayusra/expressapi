@@ -42,5 +42,25 @@ router.get('/:id',async (req,res)=>{
     }
 })
 
+//update the persons by id
+router.put('/:id',async(req,res)=>{
+    try{
+        const updatePersons = await persons.updateOne({_id:req.params.id},{$set:{Name:req.body.Name,Age:req.body.Age}})
+        res.status(200).json(updatePersons)
+    }catch(err){
+      res.json({"err":err})
+    }
+})
+
+//delete the persons
+router.delete('/:id',async(req,res)=>{
+    try{
+        const deletePersons = await persons.deleteOne({_id:req.params.id})
+        res.status(200).json(deletePersons)
+    }catch(err){
+        console.error('error deleting person',err)
+    }
+})
+
 
 module.exports = router

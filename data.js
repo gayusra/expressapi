@@ -21,10 +21,6 @@ mongoose.connect(mongoURI)
 
 
 
-
-
-
-
-app.listen(3500,()=>{
+app.listen(4000,()=>{
     console.log('server is running on the port')
 })

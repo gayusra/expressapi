@@ -42,6 +42,7 @@ app.get('/:id',async(req,res)=>{
     res.json(getOne)
 })
 
+
 //post new persons
 app.post('/',async(req,res)=>{
     
@@ -54,6 +55,7 @@ app.post('/',async(req,res)=>{
 
 
 
-app.listen(3000,()=>{
+
+app.listen(3500,()=>{
     console.log('server is running on the port')
 })
